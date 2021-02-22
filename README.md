@@ -2,9 +2,10 @@
 Este repositório guarda os trabalhos e projetos da disciplina.
 
 # Desenvolvedor:
-## Matheus dos Santos Galbiati
+- Matheus dos Santos Galbiati
 
 # Linguagens e Frameworks:
 - Python
 - C
 - Java
+- Dart

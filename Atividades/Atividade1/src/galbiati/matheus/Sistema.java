@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class Sistema {
     private boolean continuarExecucao;
     private Scanner scanner;
-    private Contas conta;
+    protected Contas conta;
+    protected Transacoes transacoes;
     //protected Contas conta;
     private int contador = 0;
 
@@ -82,5 +83,6 @@ public class Sistema {
 //                break;
 //        }
 //    }
+
 
 }

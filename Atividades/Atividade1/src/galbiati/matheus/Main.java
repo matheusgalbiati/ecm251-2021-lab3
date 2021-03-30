@@ -7,6 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
         Sistema sistema = new Sistema();
-        sistema.executar();
+        sistema.criaConta(1000);
+        sistema.criaConta(250);
+        sistema.criaConta(3000);
     }
 }

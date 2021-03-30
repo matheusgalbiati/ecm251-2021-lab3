@@ -3,11 +3,14 @@
 
 package galbiati.matheus;
 
+import java.util.Scanner;
+
 public class Contas {
     protected int idConta;
     protected double saldo;
     protected Usuarios usuarios;
-    //private int contador=0;
+    private Scanner scanner;
+    private int contador=0;
 
     public Contas(int idConta, double saldo, String nome, String senha, String email) {
         this.idConta = idConta;
@@ -15,11 +18,21 @@ public class Contas {
         this.usuarios = new Usuarios(nome, senha, email);
     }
 
-//    protected void criarConta(String nome, String senha, String email) {
-//        this.contador += 1;
-//        new Contas(contador, 0.0, nome, senha, email);
-//    }
+    protected double getSaldo(int idConta) {
+        return this.saldo;
+    }
 
+    protected void depositar(double valor) {
+        this.saldo += valor;
+    }
+
+    protected boolean sacar(double valor) {
+        if (this.saldo >= valor) {
+            this.saldo -= valor;
+            return true;
+        }
+        return false;
+    }
 
     @Override
     public String toString() {

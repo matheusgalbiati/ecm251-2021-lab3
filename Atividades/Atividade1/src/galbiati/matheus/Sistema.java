@@ -9,6 +9,7 @@ public class Sistema {
     private boolean continuarExecucao;
     private Scanner scanner;
     private Contas conta;
+    //protected Contas conta;
     private int contador = 0;
 
     public Sistema() {
@@ -16,52 +17,70 @@ public class Sistema {
         this.scanner = new Scanner(System.in);
     }
 
-    public void executar() {
-        while(continuarExecucao){
-            exibirMenu1();
-            int opcao1 = scanner.nextInt();
-            avaliarOpcao1(opcao1);
-        }
+//    public void executar() {
+//        while(continuarExecucao){
+//            int opcao = scanner.nextInt();
+//            avaliarOpcao(opcao);
+//        }
+//    }
+
+    protected void criaConta(double saldo) {
+        System.out.println("Informe seu nome completo:");
+        String nome = scanner.next();
+        System.out.println("Crie uma senha para a conta [6 digitos]:");
+        String senha = scanner.next();
+        System.out.println("Informe seu e-mail:");
+        String email = scanner.next();
+        this.contador += 1;
+        this.conta = new Contas(this.contador, saldo, nome, senha, email);
+        System.out.println("Conta criada com sucesso!\n");
+        System.out.println(conta.toString());
     }
 
-    private void exibirMenu1() {
-        System.out.println("Bem-Vindo ao Seu Banco\n");
-        System.out.println("1 - Criar conta");
-        System.out.println("2 - Acessar conta");
-        System.out.println("0 - Sair do sistema");
-    }
+//    private void avaliarOpcao(int opcao) {
+//        switch (opcao){
+//            case 0:
+//                System.out.println("Obrigado por utilizar o nosso sistema!");
+//                this.continuarExecucao = false;
+//                break;
+//            case 1:
+//                System.out.println("Saldo: R$" + this.conta.getSaldo());
+//                break;
+//            case 2:
+//                System.out.println("Informe o valor:");
+//                double valorParaDepositar = scanner.nextDouble();
+//                this.conta.depositar(valorParaDepositar);
+//                System.out.println("Operação realizada com sucesso!");
+//                break;
+//            case 3:
+//                System.out.println("Informe o valor:");
+//                double valorParaRetirar = scanner.nextDouble();
+//                if(this.conta.sacar(valorParaRetirar)){
+//                    System.out.println("Operação realizada com sucesso!");
+//                } else {
+//                    System.out.println("Operação falhou! Verificar saldo!");
+//                }
+//                break;
+//            case 5:
+//                System.out.println("Nome do título:");
+//                String nomeTitulo = scanner.next();
+//                System.out.println("Informe o valor do título:");
+//                double valorTitulo = scanner.nextDouble();
+//                System.out.println("Informe o valor do juros ao dia:");
+//                double valorJurosTitulo = scanner.nextDouble();
+//                System.out.println("Informe a data de vencimento (aaa-mm-dd):");
+//                String dataValidade = scanner.next();
+//                Titulo titulo = new Titulo(valorTitulo, valorJurosTitulo, nomeTitulo, dataValidade);
+//                if(this.conta.sacar(titulo.getTotalPagamento())){
+//                    System.out.println("Operação realizada com sucesso!");
+//                } else{
+//                    System.out.println("falha na operação!");
+//                }
+//                break;
+//            default:
+//                System.out.println("Funcionalidade ainda não implementada\n");
+//                break;
+//        }
+//    }
 
-    private void avaliarOpcao1(int opcao1) {
-        switch (opcao1){
-            case 0:
-                System.out.println("Obrigado por utilizar o nosso sistema!");
-                this.continuarExecucao = false;
-                break;
-            case 1:
-                System.out.println("Informe seu nome completo:");
-                String nome = scanner.next();
-                System.out.println("Crie uma senha para a conta [6 digitos]:");
-                String senha = scanner.next();
-                System.out.println("Informe seu e-mail:");
-                String email = scanner.next();
-                this.contador += 1;
-                this.conta = new Contas(this.contador, 0.0, nome, senha, email);
-                System.out.println("Conta criada com sucesso!\n");
-                //System.out.println(conta.toString());
-                break;
-            case 2:
-                System.out.println("Digite seu e-mail:");
-                String emailLogin = scanner.next();
-                System.out.println("Digite sua senha:");
-                String senhaLogin = scanner.next();
-                if(conta.usuarios.email == emailLogin && conta.usuarios.senha == senhaLogin){
-                    System.out.println("Voce acertou");
-                } else {
-                    System.out.println("Voce errou");
-                }
-            default:
-                System.out.println("Funcionalidade ainda não implementada\n");
-                break;
-        }
-    }
 }

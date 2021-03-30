@@ -54,7 +54,11 @@ public class Sistema {
                 String emailLogin = scanner.next();
                 System.out.println("Digite sua senha:");
                 String senhaLogin = scanner.next();
-
+                if(conta.usuarios.email == emailLogin && conta.usuarios.senha == senhaLogin){
+                    System.out.println("Voce acertou");
+                } else {
+                    System.out.println("Voce errou");
+                }
             default:
                 System.out.println("Funcionalidade ainda não implementada\n");
                 break;

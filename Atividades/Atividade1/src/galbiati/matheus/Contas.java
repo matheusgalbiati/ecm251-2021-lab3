@@ -4,9 +4,9 @@
 package galbiati.matheus;
 
 public class Contas {
-    private int idConta;
-    private double saldo;
-    private Usuarios usuarios;
+    protected int idConta;
+    protected double saldo;
+    protected Usuarios usuarios;
     //private int contador=0;
 
     public Contas(int idConta, double saldo, String nome, String senha, String email) {

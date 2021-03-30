@@ -4,9 +4,9 @@
 package galbiati.matheus;
 
 public class Usuarios {
-    private String nome;
-    private String senha;
-    private String email;
+    protected String nome;
+    protected String senha;
+    protected String email;
 
     public Usuarios(String nome, String senha, String email) {
         this.nome = nome;

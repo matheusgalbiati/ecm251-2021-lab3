@@ -24,7 +24,7 @@ public class Sistema {
 //        }
 //    }
 
-    protected void criaConta(double saldo) {
+    protected Contas criaConta(double saldoInicial) {
         System.out.println("Informe seu nome completo:");
         String nome = scanner.next();
         System.out.println("Crie uma senha para a conta [6 digitos]:");
@@ -32,9 +32,10 @@ public class Sistema {
         System.out.println("Informe seu e-mail:");
         String email = scanner.next();
         this.contador += 1;
-        this.conta = new Contas(this.contador, saldo, nome, senha, email);
-        System.out.println("Conta criada com sucesso!\n");
-        System.out.println(conta.toString());
+        //this.conta = new Contas(this.contador, saldo, nome, senha, email);
+        //System.out.println("Conta criada com sucesso!\n");
+        //System.out.println(conta.toString());
+        return (this.conta = new Contas(this.contador, saldoInicial, nome, senha, email));
     }
 
 //    private void avaliarOpcao(int opcao) {

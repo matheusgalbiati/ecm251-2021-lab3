@@ -6,8 +6,10 @@ package galbiati.matheus;
 import java.util.Random;
 
 public class Transacoes {
+    Sistema sistema = new Sistema();
+    //protected Contas conta;
 
-    protected String geraRequisicao(int idConta, String nomeUsuario, int valor) {
+    protected String gerarRequisicao(int idConta, String nomeUsuario, int valor) {
         int numAleatorio = getRandomNumberInRange(1000, 9999);
         //String numConvertido = Integer.toString(numAleatorio);
         //String idContaConvertido = Integer.toString(idConta);
@@ -20,6 +22,25 @@ public class Transacoes {
     private static int getRandomNumberInRange(int min, int max) {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
+    }
+
+    protected boolean transferirPara(double valor, Contas origem, Contas destino) {
+        if(origem.sacar(valor, origem)) {
+            destino.depositar(valor, destino);
+            return true;
+        }
+        return false;
+    }
+
+    protected void pagarRequisicao(Contas pagador, Contas recebedor, String QRCode) {
+        String[] dados = QRCode.split(";");
+        //String idContaDestino = dados[0];
+        //String usuarioDestino = dados[1];
+        double valor = Double.parseDouble(dados[2]);
+        //sistema.conta.transferirPara(valor, pagador, recebedor);
+        //conta.transferirPara(valor, pagador, recebedor);
+        //sistema.conta.transferirPara(valor, pagador, recebedor);
+        transferirPara(valor, pagador, recebedor);
     }
 
 }

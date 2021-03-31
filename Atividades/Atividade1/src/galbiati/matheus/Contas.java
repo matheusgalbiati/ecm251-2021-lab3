@@ -9,6 +9,7 @@ public class Contas {
     protected int idConta;
     protected double saldo;
     protected Usuarios usuarios;
+    protected Transacoes transacoes;
     private Scanner scanner;
     private int contador=0;
 
@@ -22,17 +23,25 @@ public class Contas {
         return this.saldo;
     }
 
-    protected void depositar(double valor) {
-        this.saldo += valor;
+    protected void depositar(double valor, Contas destino) {
+        destino.saldo += valor;
     }
 
-    protected boolean sacar(double valor) {
-        if (this.saldo >= valor) {
-            this.saldo -= valor;
+    protected boolean sacar(double valor, Contas origem) {
+        if (origem.saldo >= valor) {
+            origem.saldo -= valor;
             return true;
         }
         return false;
     }
+
+//    protected boolean transferirPara(double valor, Contas origem, Contas destino) {
+//        if(origem.sacar(valor, origem)) {
+//            destino.depositar(valor, destino);
+//            return true;
+//        }
+//        return false;
+//    }
 
     @Override
     public String toString() {

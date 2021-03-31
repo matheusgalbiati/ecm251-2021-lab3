@@ -10,7 +10,6 @@ public class Sistema {
     private Scanner scanner;
     protected Contas conta;
     protected Transacoes transacoes;
-    //protected Contas conta;
     private int contador = 0;
 
     public Sistema() {

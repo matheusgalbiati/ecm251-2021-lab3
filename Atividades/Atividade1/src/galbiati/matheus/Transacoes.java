@@ -7,13 +7,14 @@ import java.util.Random;
 
 public class Transacoes {
 
-    protected String[] geraRequisicao(int idConta, String nomeUsuario, int valor) {
+    protected String geraRequisicao(int idConta, String nomeUsuario, int valor) {
         int numAleatorio = getRandomNumberInRange(1000, 9999);
-        String numConvertido = Integer.toString(numAleatorio);
-        String idContaConvertido = Integer.toString(idConta);
-        String valorConvertido = Integer.toString(valor);
-        String[] resposta = {idContaConvertido, nomeUsuario, valorConvertido, numConvertido};
-        return resposta;
+        //String numConvertido = Integer.toString(numAleatorio);
+        //String idContaConvertido = Integer.toString(idConta);
+        //String valorConvertido = Integer.toString(valor);
+        //String[] resposta = {idContaConvertido, nomeUsuario, valorConvertido, numConvertido};
+        //return resposta;
+        return (idConta+";"+nomeUsuario+";"+valor+";"+numAleatorio);
     }
 
     private static int getRandomNumberInRange(int min, int max) {

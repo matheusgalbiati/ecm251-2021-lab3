@@ -34,13 +34,17 @@ public class Transacoes {
 
     protected void pagarRequisicao(Contas pagador, Contas recebedor, String QRCode) {
         String[] dados = QRCode.split(";");
-        //String idContaDestino = dados[0];
-        //String usuarioDestino = dados[1];
+        String idContaDestino = dados[0];
+        String usuarioDestino = dados[1];
         double valor = Double.parseDouble(dados[2]);
+        if(sistema.contasCadastradas.contains(idContaDestino) && sistema.contasCadastradas.contains(usuarioDestino)){
+            transferirPara(valor, pagador, recebedor);
+        }
+        transferirPara(valor, pagador, recebedor);
         //sistema.conta.transferirPara(valor, pagador, recebedor);
         //conta.transferirPara(valor, pagador, recebedor);
         //sistema.conta.transferirPara(valor, pagador, recebedor);
-        transferirPara(valor, pagador, recebedor);
+        //transferirPara(valor, pagador, recebedor);
     }
 
 }

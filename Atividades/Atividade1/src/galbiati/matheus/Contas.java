@@ -3,6 +3,8 @@
 
 package galbiati.matheus;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Contas {
@@ -19,6 +21,7 @@ public class Contas {
         this.usuarios = new Usuarios(nome, senha, email);
     }
 
+
     protected double getSaldo(int idConta) {
         return this.saldo;
     }
@@ -34,6 +37,8 @@ public class Contas {
         }
         return false;
     }
+
+
 
 //    protected boolean transferirPara(double valor, Contas origem, Contas destino) {
 //        if(origem.sacar(valor, origem)) {

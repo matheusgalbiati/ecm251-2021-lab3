@@ -3,6 +3,8 @@
 
 package galbiati.matheus;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -16,6 +18,8 @@ public class Sistema {
         this.continuarExecucao = true;
         this.scanner = new Scanner(System.in);
     }
+
+    List contasCadastradas = new ArrayList();
 
 //    public void executar() {
 //        while(continuarExecucao){
@@ -32,13 +36,19 @@ public class Sistema {
         System.out.println("Informe seu e-mail:");
         String email = scanner.next();
         this.contador += 1;
+        this.conta = new Contas(this.contador, saldoInicial, nome, senha, email);
+        setContasCriadas(contasCadastradas);
         //this.conta = new Contas(this.contador, saldo, nome, senha, email);
         //System.out.println("Conta criada com sucesso!\n");
         //System.out.println(conta.toString());
-        return (this.conta = new Contas(this.contador, saldoInicial, nome, senha, email));
+        return (this.conta);
     }
 
-//    private void avaliarOpcao(int opcao) {
+    public void setContasCriadas(List contasCadastradas) {
+        this.contasCadastradas.add(this.conta);
+    }
+
+    //    private void avaliarOpcao(int opcao) {
 //        switch (opcao){
 //            case 0:
 //                System.out.println("Obrigado por utilizar o nosso sistema!");

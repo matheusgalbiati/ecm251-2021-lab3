@@ -15,6 +15,10 @@ public class Contas {
     private Scanner scanner;
     private int contador=0;
 
+    public Contas() {
+
+    }
+
     public Contas(int idConta, double saldo, String nome, String senha, String email) {
         this.idConta = idConta;
         this.saldo = saldo;

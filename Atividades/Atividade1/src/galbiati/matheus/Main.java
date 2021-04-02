@@ -6,26 +6,28 @@ package galbiati.matheus;
 public class Main {
 
     public static void main(String[] args) {
-        Sistema sistema = new Sistema();
-        Transacoes transacoes = new Transacoes();
-        //Contas contas;
-        //Contas conta = new Contas();
+        Contas contas = new Contas();
 
+        Contas c1 = contas.criaConta(1000,"matheus","123","matheus@teste.com");
+        Contas c2 = contas.criaConta(250,"joao","456","joao@teste.com");
+        Contas c3 = contas.criaConta(3000,"ana","789","ana@teste.com");
 
-        Contas c1 = sistema.criaConta(1000);
-        Contas c2 = sistema.criaConta(250);
-        Contas c3 = sistema.criaConta(3000);
-        String t1 = transacoes.gerarRequisicao(1, "matheus", 1);
-        transacoes.pagarRequisicao(c2, c1, t1);
-        //sistema.transacoes.pagarRequisicao(c1, c2, t1);
-        //sistema.transacoes.pagarRequisicao(c1, c2, t1);
-        System.out.println(c1.saldo);
-        System.out.println(c2.saldo);
+        System.out.println("Estado Inicial:");
+        System.out.println("Nome de usuario: "+c1.usuarios.nome+" - Saldo: "+c1.saldo);
+        System.out.println("Nome de usuario: "+c2.usuarios.nome+" - Saldo: "+c2.saldo);
+        System.out.println("Nome de usuario: "+c3.usuarios.nome+" - Saldo: "+c3.saldo);
 
-        //System.out.println(sistema.contasCadastradas);
-        //System.out.println(sistema.contasCadastradas.get(0));
+        String t1 = contas.transacoes.gerarRequisicao(1, "matheus", 250);
+        contas.transacoes.pagarRequisicao(c2, c1, t1);
+        contas.transacoes.pagarRequisicao(c3, c1, t1);
+        contas.transacoes.pagarRequisicao(c2, c1, t1);
+        String t2 = contas.transacoes.gerarRequisicao(2,"joao",1000);
+        contas.transacoes.pagarRequisicao(c3, c2, t2);
 
-
+        System.out.println("Estado Final:");
+        System.out.println("Nome de usuario: "+c1.usuarios.nome+" - Saldo: "+c1.saldo);
+        System.out.println("Nome de usuario: "+c2.usuarios.nome+" - Saldo: "+c2.saldo);
+        System.out.println("Nome de usuario: "+c3.usuarios.nome+" - Saldo: "+c3.saldo);
 
     }
 }

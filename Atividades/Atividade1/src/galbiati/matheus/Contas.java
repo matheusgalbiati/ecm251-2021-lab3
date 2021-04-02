@@ -1,6 +1,8 @@
 //Matheus dos Santos Galbiati   RA: 19.01324-8
 //João Pedro Moura Penafiel     RA: 19.00097-9
 
+//Material de referencia: aulas de Linguagens de Programação I e apostila java Caelum
+
 package galbiati.matheus;
 
 import java.util.Scanner;

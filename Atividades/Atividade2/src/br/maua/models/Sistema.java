@@ -6,7 +6,7 @@ public class Sistema {
     public boolean continuarExecucao;
     public Scanner scanner;
 
-    public static String horario = "Horario Regular";
+    private static String horario = "Horario Regular";
 
 
     public Sistema() {

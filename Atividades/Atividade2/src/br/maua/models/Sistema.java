@@ -1,12 +1,14 @@
 package br.maua.models;
 
+import br.maua.enums.HorarioSistema;
+
 import java.util.Scanner;
 
 public class Sistema {
     public boolean continuarExecucao;
     public Scanner scanner;
-
-    private static String horario = "Horario Regular";
+    
+    private static HorarioSistema horario = HorarioSistema.Regular;
 
 
     public Sistema() {
@@ -22,7 +24,7 @@ public class Sistema {
         }
     }
 
-    public static String getHorario() {
+    public static HorarioSistema getHorario() {
         return horario;
     }
 
@@ -33,12 +35,12 @@ public class Sistema {
                 this.continuarExecucao = false;
                 break;
             case 3:
-                if(horario == "Horario Regular") {
-                    horario = "Horario Extra";
+                if(horario == HorarioSistema.Regular) {
+                    horario = HorarioSistema.Extra;
                     break;
                 }
-                if(horario == "Horario Extra"){
-                    horario = "Horario Regular";
+                if(horario == HorarioSistema.Extra){
+                    horario = HorarioSistema.Regular;
                     break;
                 }
         }

@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Sistema {
     public boolean continuarExecucao;
     public Scanner scanner;
-    
+
     private static HorarioSistema horario = HorarioSistema.Regular;
 
 

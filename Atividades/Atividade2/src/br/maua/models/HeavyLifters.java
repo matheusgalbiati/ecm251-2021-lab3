@@ -16,9 +16,9 @@ public class HeavyLifters extends Membros{
 
     @Override
     public void postarMensagem() {
-        if(Sistema.getHorario() == HorarioSistema.Regular)
+        if(qualHorario() == HorarioSistema.Regular)
         System.out.println("Podem contar conosco!");
-        if(Sistema.getHorario() == HorarioSistema.Extra)
+        if(qualHorario() == HorarioSistema.Extra)
             System.out.println("N00b_qu3_n_Se_r3pita.bat");
     }
 

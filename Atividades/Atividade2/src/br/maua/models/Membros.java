@@ -1,6 +1,9 @@
 package br.maua.models;
 
-abstract class Membros {
+import br.maua.interfaces.Apresentacao;
+import br.maua.interfaces.PostarMensagem;
+
+abstract class Membros implements PostarMensagem, Apresentacao {
     public String nomeUsuario;
     public String email;
     public String funcao;

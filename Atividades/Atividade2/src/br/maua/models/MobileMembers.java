@@ -31,9 +31,9 @@ public class MobileMembers extends Membros{
      */
     @Override
     public void postarMensagem() {
-        if(Sistema.getHorario() == HorarioSistema.Regular)
+        if(qualHorario() == HorarioSistema.Regular)
             System.out.println("Happy Coding!");
-        if(Sistema.getHorario() == HorarioSistema.Extra)
+        if(qualHorario() == HorarioSistema.Extra)
             System.out.println("Happy_C0d1ng.Maskers");
     }
 

@@ -80,6 +80,9 @@ public class Sistema {
                 int tipoMembroRemocao = scanner.nextInt();
                 excluirMembro(tipoMembroRemocao);
                 break;
+            case 5:
+                exibirRelatorio();
+                break;
         }
     }
 
@@ -93,6 +96,7 @@ public class Sistema {
         System.out.println("2 - Postar mensagem");
         System.out.println("3 - Trocar horario de trabalho");
         System.out.println("4 - Excluir membro");
+        System.out.println("5 - Exibir relatório");
         System.out.println("0 - Encerrar sistema");
     }
 
@@ -162,5 +166,15 @@ public class Sistema {
         heavyLiftersList.forEach(heavyLifters -> heavyLifters.postarMensagem());
         scriptGuysList.forEach(scriptGuys -> scriptGuys.postarMensagem());
         bigBrothersList.forEach(bigBrothers -> bigBrothers.postarMensagem());
+    }
+
+    /**
+     * Método que percorre as listas dos membros e faz a apresentação deles
+     */
+    public void exibirRelatorio(){
+        mobileMembersList.forEach(mobileMembers -> mobileMembers.apresentar());
+        heavyLiftersList.forEach(heavyLifters -> heavyLifters.apresentar());
+        scriptGuysList.forEach(scriptGuys -> scriptGuys.apresentar());
+        bigBrothersList.forEach(bigBrothers -> bigBrothers.apresentar());
     }
 }

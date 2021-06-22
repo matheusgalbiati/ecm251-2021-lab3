@@ -60,8 +60,8 @@ public class Sistema {
                 break;
             case 1:
                 menuCadastro();
-                int tipoMembro = scanner.nextInt();
-                cadastrarMembro(tipoMembro);
+                int tipoMembroCadastro = scanner.nextInt();
+                cadastrarMembro(tipoMembroCadastro);
                 break;
             case 3:
                 if(horario == HorarioSistema.Regular) {
@@ -72,6 +72,11 @@ public class Sistema {
                     horario = HorarioSistema.Regular;
                     break;
                 }
+            case 4:
+                menuRemocao();
+                int tipoMembroRemocao = scanner.nextInt();
+                excluirMembro(tipoMembroRemocao);
+                break;
         }
     }
 
@@ -116,5 +121,33 @@ public class Sistema {
             scriptGuysList.add(new ScriptGuys(nomeNovoMembro, emailNovoMembro, TiposMembros.ScriptGuys));
         if(tipoMembro == 4)
             bigBrothersList.add(new BigBrothers(nomeNovoMembro, emailNovoMembro, TiposMembros.BigBrothers));
+    }
+
+    /**
+     * Menu com as opções de membros para fazer a remoção
+     */
+    public void menuRemocao(){
+        System.out.println("Escolha o tipo de membro que deseja excluir");
+        System.out.println("1 - Mobile Members");
+        System.out.println("2 - Heavy Lifters");
+        System.out.println("3 - Script Guys");
+        System.out.println("4 - Big Brothers");
+    }
+
+    /**
+     * Método que exclui um membro pelo seu índice
+     * @param tipoMembro tipo do membro escolhido pelo usuário para excluir
+     */
+    public void excluirMembro(int tipoMembro){
+        System.out.println("Digite o índice do membro que deseja excluir:");
+        int indice = scanner.nextInt();
+        if(tipoMembro == 1)
+            mobileMembersList.remove(indice);
+        if(tipoMembro == 2)
+            heavyLiftersList.remove(indice);
+        if(tipoMembro == 3)
+            scriptGuysList.remove(indice);
+        if(tipoMembro == 4)
+            bigBrothersList.remove(indice);
     }
 }

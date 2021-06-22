@@ -63,6 +63,9 @@ public class Sistema {
                 int tipoMembroCadastro = scanner.nextInt();
                 cadastrarMembro(tipoMembroCadastro);
                 break;
+            case 2:
+                postarMensagem();
+                break;
             case 3:
                 if(horario == HorarioSistema.Regular) {
                     horario = HorarioSistema.Extra;
@@ -149,5 +152,15 @@ public class Sistema {
             scriptGuysList.remove(indice);
         if(tipoMembro == 4)
             bigBrothersList.remove(indice);
+    }
+
+    /**
+     * Método que percorre todas as listas de membros e posta suas mensagens dependendo do horário
+     */
+    public void postarMensagem(){
+        mobileMembersList.forEach(mobileMembers -> mobileMembers.postarMensagem());
+        heavyLiftersList.forEach(heavyLifters -> heavyLifters.postarMensagem());
+        scriptGuysList.forEach(scriptGuys -> scriptGuys.postarMensagem());
+        bigBrothersList.forEach(bigBrothers -> bigBrothers.postarMensagem());
     }
 }

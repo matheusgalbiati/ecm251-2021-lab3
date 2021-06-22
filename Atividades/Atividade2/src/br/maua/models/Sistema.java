@@ -196,6 +196,13 @@ public class Sistema {
         bigBrothersList.forEach(bigBrothers -> bigBrothers.apresentar());
     }
 
+    /**
+     * Método que cria um arquivo para gravar os dados dos usuários cadastrados
+     * @param categoria Tipo de função do membro cadastrado
+     * @param nome Nome do membro cadastrado
+     * @param id id único atribuído para cada membro cadastrado
+     * @throws Exception
+     */
     private static void criaArquivo(TiposMembros categoria, String nome, int id) throws Exception {
         FileWriter fileWriter = new FileWriter("arquivo_super_Secreto_nao_abrir.csv", true);
         fileWriter.append(categoria+";"+nome+";"+id+"\n");

@@ -3,6 +3,7 @@ package br.maua.models;
 import br.maua.enums.HorarioSistema;
 import br.maua.enums.TiposMembros;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,6 +16,7 @@ public class Sistema {
     public Scanner scanner;
 
     private static HorarioSistema horario = HorarioSistema.Regular;
+    private static int id = 0;
 
     List<MobileMembers> mobileMembersList = new ArrayList<>();
     List<HeavyLifters> heavyLiftersList = new ArrayList<>();
@@ -90,7 +92,7 @@ public class Sistema {
      * Menu de exibição inicial
      */
     public void exibirMenu(){
-        System.out.println("Bem-vindo a Mask_Society");
+        System.out.println("\nBem-vindo a Mask_Society");
         System.out.println("Horario de trabalho atual: " + horario);
         System.out.println("1 - Cadastrar novo membro");
         System.out.println("2 - Postar mensagem");
@@ -120,14 +122,30 @@ public class Sistema {
         String nomeNovoMembro = scanner.next();
         System.out.println("Digite o e-mail do novo membro:");
         String emailNovoMembro = scanner.next();
-        if(tipoMembro == 1)
-            mobileMembersList.add(new MobileMembers(nomeNovoMembro, emailNovoMembro, TiposMembros.MobileMembers));
-        if(tipoMembro == 2)
-            heavyLiftersList.add(new HeavyLifters(nomeNovoMembro, emailNovoMembro, TiposMembros.HeavyLifters));
-        if(tipoMembro == 3)
-            scriptGuysList.add(new ScriptGuys(nomeNovoMembro, emailNovoMembro, TiposMembros.ScriptGuys));
-        if(tipoMembro == 4)
-            bigBrothersList.add(new BigBrothers(nomeNovoMembro, emailNovoMembro, TiposMembros.BigBrothers));
+        try {
+            if(tipoMembro == 1) {
+                mobileMembersList.add(new MobileMembers(nomeNovoMembro, emailNovoMembro, TiposMembros.MobileMembers));
+                criaArquivo(TiposMembros.MobileMembers, nomeNovoMembro, id);
+                id += 1;
+            }
+            if(tipoMembro == 2) {
+                heavyLiftersList.add(new HeavyLifters(nomeNovoMembro, emailNovoMembro, TiposMembros.HeavyLifters));
+                criaArquivo(TiposMembros.HeavyLifters, nomeNovoMembro, id);
+                id += 1;
+            }
+            if(tipoMembro == 3) {
+                scriptGuysList.add(new ScriptGuys(nomeNovoMembro, emailNovoMembro, TiposMembros.ScriptGuys));
+                criaArquivo(TiposMembros.ScriptGuys, nomeNovoMembro, id);
+                id += 1;
+            }
+            if(tipoMembro == 4) {
+                bigBrothersList.add(new BigBrothers(nomeNovoMembro, emailNovoMembro, TiposMembros.BigBrothers));
+                criaArquivo(TiposMembros.BigBrothers, nomeNovoMembro, id);
+                id += 1;
+            }
+        } catch (Exception exception){
+            System.out.println("Algo deu errado!");
+        }
     }
 
     /**
@@ -176,5 +194,11 @@ public class Sistema {
         heavyLiftersList.forEach(heavyLifters -> heavyLifters.apresentar());
         scriptGuysList.forEach(scriptGuys -> scriptGuys.apresentar());
         bigBrothersList.forEach(bigBrothers -> bigBrothers.apresentar());
+    }
+
+    private static void criaArquivo(TiposMembros categoria, String nome, int id) throws Exception {
+        FileWriter fileWriter = new FileWriter("arquivo_super_Secreto_nao_abrir.csv", true);
+        fileWriter.append(categoria+";"+nome+";"+id+"\n");
+        fileWriter.close();
     }
 }

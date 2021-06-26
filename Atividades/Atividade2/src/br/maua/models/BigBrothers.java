@@ -11,7 +11,7 @@ public class BigBrothers extends Membros{
     /**
      * Método construtor da classe Big Brothers
      * @param nomeUsuario NOme de usuário do membro
-     * @param email e-mail do menbro
+     * @param email e-mail do membro
      */
     public BigBrothers(String nomeUsuario, String email) {
         super(nomeUsuario, email, TiposMembros.BigBrothers);

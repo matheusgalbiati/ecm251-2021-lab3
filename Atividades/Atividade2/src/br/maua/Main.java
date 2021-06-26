@@ -3,7 +3,7 @@
 
 package br.maua;
 
-import br.maua.models.Sistema;
+import br.maua.controladores.Sistema;
 
 public class Main {
 

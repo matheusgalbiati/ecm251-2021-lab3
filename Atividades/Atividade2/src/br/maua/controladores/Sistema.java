@@ -1,7 +1,11 @@
-package br.maua.models;
+package br.maua.controladores;
 
 import br.maua.enums.HorarioSistema;
 import br.maua.enums.TiposMembros;
+import br.maua.models.BigBrothers;
+import br.maua.models.HeavyLifters;
+import br.maua.models.MobileMembers;
+import br.maua.models.ScriptGuys;
 
 import java.io.FileWriter;
 import java.util.ArrayList;

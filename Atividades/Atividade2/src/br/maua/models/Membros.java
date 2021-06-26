@@ -1,5 +1,6 @@
 package br.maua.models;
 
+import br.maua.controladores.Sistema;
 import br.maua.enums.HorarioSistema;
 import br.maua.enums.TiposMembros;
 import br.maua.interfaces.Apresentacao;

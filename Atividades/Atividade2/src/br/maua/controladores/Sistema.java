@@ -16,8 +16,8 @@ import java.util.Scanner;
  * Classe responsável pelo funcionamento do sistema
  */
 public class Sistema {
-    public boolean continuarExecucao;
-    public Scanner scanner;
+    private boolean continuarExecucao;
+    private Scanner scanner;
 
     private static HorarioSistema horario = HorarioSistema.Regular;
     private static int id = 0;

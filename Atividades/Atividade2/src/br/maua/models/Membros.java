@@ -10,9 +10,9 @@ import br.maua.interfaces.PostarMensagem;
  * Classe abstrata usada como modelo para os tipos de membros
  */
 abstract class Membros implements PostarMensagem, Apresentacao {
-    public String nomeUsuario;
-    public String email;
-    public TiposMembros funcao;
+    protected String nomeUsuario;
+    protected String email;
+    protected TiposMembros funcao;
 
     /**
      * Método construtor da classe abstrada Membros

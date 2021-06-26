@@ -131,22 +131,22 @@ public class Sistema {
         String emailNovoMembro = scanner.next();
         try {
             if(tipoMembro == 1) {
-                mobileMembersList.add(new MobileMembers(nomeNovoMembro, emailNovoMembro, TiposMembros.MobileMembers));
+                mobileMembersList.add(new MobileMembers(nomeNovoMembro, emailNovoMembro));
                 criaArquivo(TiposMembros.MobileMembers, nomeNovoMembro, id);
                 id += 1;
             }
             if(tipoMembro == 2) {
-                heavyLiftersList.add(new HeavyLifters(nomeNovoMembro, emailNovoMembro, TiposMembros.HeavyLifters));
+                heavyLiftersList.add(new HeavyLifters(nomeNovoMembro, emailNovoMembro));
                 criaArquivo(TiposMembros.HeavyLifters, nomeNovoMembro, id);
                 id += 1;
             }
             if(tipoMembro == 3) {
-                scriptGuysList.add(new ScriptGuys(nomeNovoMembro, emailNovoMembro, TiposMembros.ScriptGuys));
+                scriptGuysList.add(new ScriptGuys(nomeNovoMembro, emailNovoMembro));
                 criaArquivo(TiposMembros.ScriptGuys, nomeNovoMembro, id);
                 id += 1;
             }
             if(tipoMembro == 4) {
-                bigBrothersList.add(new BigBrothers(nomeNovoMembro, emailNovoMembro, TiposMembros.BigBrothers));
+                bigBrothersList.add(new BigBrothers(nomeNovoMembro, emailNovoMembro));
                 criaArquivo(TiposMembros.BigBrothers, nomeNovoMembro, id);
                 id += 1;
             }

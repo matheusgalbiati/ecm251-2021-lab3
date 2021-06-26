@@ -12,10 +12,9 @@ public class MobileMembers extends Membros{
      * Método construtor da classe Mobile Members
      * @param nomeUsuario Nome de usuário do membro
      * @param email e-mail do membro
-     * @param funcao Função do membro
      */
-    public MobileMembers(String nomeUsuario, String email, TiposMembros funcao) {
-        super(nomeUsuario, email, funcao);
+    public MobileMembers(String nomeUsuario, String email) {
+        super(nomeUsuario, email, TiposMembros.MobileMembers);
     }
 
     /**

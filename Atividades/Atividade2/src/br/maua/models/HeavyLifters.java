@@ -12,10 +12,9 @@ public class HeavyLifters extends Membros{
      * Método construtor da classe Heavy Lifters
      * @param nomeUsuario Nome de usuário do membro
      * @param email e-mail do membro
-     * @param funcao Função do membro
      */
-    public HeavyLifters(String nomeUsuario, String email, TiposMembros funcao) {
-        super(nomeUsuario, email, funcao);
+    public HeavyLifters(String nomeUsuario, String email) {
+        super(nomeUsuario, email, TiposMembros.HeavyLifters);
     }
 
     /**

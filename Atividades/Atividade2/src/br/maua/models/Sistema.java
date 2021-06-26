@@ -85,6 +85,9 @@ public class Sistema {
             case 5:
                 exibirRelatorio();
                 break;
+            default:
+                System.out.println("Funcionalidade ainda não implementada");
+                break;
         }
     }
 
